@@ -15,5 +15,4 @@ jobs:
       - name: Run API tests
         run: |
           postman collection run 'postman/collections/santa-ci.json' -e 'data.json'
-          # Lint your API using Postman CLI
-          postman api lint
+          

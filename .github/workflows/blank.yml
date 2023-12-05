@@ -10,10 +10,9 @@ jobs:
       - name: Install Postman CLI
         run: |
           curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
-      - name: Login to Postman CLI
-        run: postman login --with-api-key ${{ secrets.OKSANA }}
+     
       - name: Run API tests
         run: |
-          postman collection run https://api.postman.com/collections/21611409-9843529e-22e1-41a8-a0d3-e96999e53638?access_key=PMAT-01HGX9Z1MVWYGMAVAZHFZ2J1A3 -e 'data.json'
+          postman collection run https://api.postman.com/collections/21611409-9843529e-22e1-41a8-a0d3-e96999e53638?access_key=${{ secrets.OKSANA }} -e 'data.json'
           # Lint your API using Postman CLI
           postman api lint
